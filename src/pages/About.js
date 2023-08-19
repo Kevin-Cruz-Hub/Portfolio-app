@@ -50,11 +50,11 @@ function About() {
   ]
   return (
     <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
+    initial={{width: 0}}
+    animate={{width: '100%'}}
+    exit={{x: window.innerWidth}}
     >
-      <div class="container-sm mt-10">
+      <div className="container-sm mt-10">
         <div className="flex flex-col items-center">
           <h1 className="text-6xl mb-3">About</h1>
           <p>
@@ -78,7 +78,7 @@ function About() {
                   className="box"
                   whileHover={{ scale: 0.9 }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}>
-                  <div className="m-2" key={index}><img src={close} alt="img" className="h-20 rounded-xl" /></div>
+                  <div className="m-2"><img src={close} key={index} alt="img" className="h-20 rounded-xl" /></div>
                 </motion.div>
               )
             }
