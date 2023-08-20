@@ -1,7 +1,7 @@
 Title: Kevin's Porfolio
 
 Summary:
-This is a portfolio app consisting of the work I have done, a summary of who I am and the skills I have accrued throughout my carrer working within the IT field and the non work related experience
+This is a portfolio app consisting of the work I have done, a summary of who I am and the skills I have accumulated throughout my career working within the IT field and the non work related experience i've gained.
 
 Features:
 - Page animations
