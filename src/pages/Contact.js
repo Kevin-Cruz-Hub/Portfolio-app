@@ -4,7 +4,7 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Form';
 
 function Contact() {
-  const [fact, setFact] = useState(null)
+  const [fact, setFact] = useState([])
   console.log(fact)
   const apiKey = process.env.REACT_APP_PORTFOLIO_API_KEY
   // const category = 'success'
@@ -14,8 +14,8 @@ function Contact() {
     method: 'GET',
     headers: { 'x-api-key': apiKey }
   }
-  const mood=['happiness', 'success', 'learning']
-  let rand = Math.floor(Math.random() * mood.length)
+  const mood = ['happiness', 'life', 'learning', 'inspirational', 'dreams']
+  let rand = Math.floor(Math.random() * mood.length -1)
   console.log(rand)
   const url = `https://api.api-ninjas.com/v1/quotes?category=${mood[rand]}`
 
@@ -34,6 +34,10 @@ function Contact() {
     getFact()
 
   }, [])
+
+
+
+  // fact.map((quote) => console.log(quote.quote))
   return (
     <motion.div
       initial={{ width: 0 }}
@@ -42,7 +46,7 @@ function Contact() {
     >
       <div className="container-sm flex justify-center flex-col">
         <div>
-          <h1 className='text-6xl m-8'>Contact Page</h1>
+          <h1 className='text-6xl m-10'>Contact Page</h1>
         </div>
         <div className='text-2xl'>
           <Form>
@@ -55,15 +59,23 @@ function Contact() {
               <Form.Control type="email" placeholder="name@example.com" />
             </Form.Group>
             <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-              <Form.Label>What would you like to tell me?</Form.Label>
+              <Form.Label>Have a question, Want to work together?</Form.Label>
               <Form.Control as="textarea" rows={3} />
             </Form.Group>
+            <button>Submit</button>
           </Form>
         </div>
-        <div>
-          <p>Random Fact:</p>
+        <div className='m-10'>
+          <p>Random Quote:</p>
           {
+            fact.map((quote) => 
+              <>
+                <p className='text-2xl'>{quote.quote}</p>
+                <p>Quoted by: {quote.author}</p>
+                <p className=''>Category: {quote.category}</p>
+              </>
             
+            )
           }
         </div>
       </div>

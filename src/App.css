@@ -3,12 +3,12 @@
 @tailwind utilities;
 
 body {
-	/* background-image: url("https://cdn.mos.cms.futurecdn.net/HuGGeENt6kGyixe3hT9tnY.jpg") ; */
+	background-image: url("https://img.freepik.com/free-vector/orange-geometrical-background-design-vector_53876-62367.jpg?w=740&t=st=1692547768~exp=1692548368~hmac=5bf4028c880240ada61c839b6bd1fa9cfb884bffc1d0f2e1220bd3a2ee9cd458") ;
     /* opacity: 0.6; */
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
-	background-color: rgb(5, 3, 18);
+	/* background-color: rgb(5, 3, 18); */
 	color: rgb(242, 255, 142);
 	overflow: hidden;
 }

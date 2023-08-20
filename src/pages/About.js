@@ -48,6 +48,7 @@ function About() {
       img: 'https://img.freepik.com/free-vector/math-background_23-2148144700.jpg'
     }
   ]
+  
   return (
     <motion.div
     initial={{width: 0}}
@@ -57,7 +58,9 @@ function About() {
       <div className="container-sm mt-10">
         <div className="flex flex-col items-center">
           <h1 className="text-6xl mb-3">About</h1>
-          <p>
+          <p
+           className='text-lg'
+          >
             My name is Kevin Cruz, I have a background in customer service,
             programming, and Computer Information Systems. I am proficient
             with hardware/software troubleshooting, frontend development,
