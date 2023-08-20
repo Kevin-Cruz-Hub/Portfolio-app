@@ -64,29 +64,29 @@ function Skills() {
     Skill: 'Nodejs',
     def: 'js (Node) is an open source, cross-platform runtime environment for executing JavaScript code. Node is used extensively for server-side programming, making it possible for developers to use JavaScript for client-side and server-side code without needing to learn an additional language.'
   }
-  // },
-  // {
-  //   ek: ,
-  //   Skill: '',
-  //   def: ''
-  // }
-  // },
-  // {
-  //   ek: ,
-  //   Skill: '',
-  //   def: ''
-  // }
-]
+    // },
+    // {
+    //   ek: ,
+    //   Skill: '',
+    //   def: ''
+    // }
+    // },
+    // {
+    //   ek: ,
+    //   Skill: '',
+    //   def: ''
+    // }
+  ]
 
   function CustomToggle({ children, eventKey }) {
     const decoratedOnClick = useAccordionButton(eventKey, () =>
       console.log('totally custom!'),
     );
-  
+
     return (
       <button
         type="button"
-        style={{color:'greenyellow'  }}
+        style={{ color: 'greenyellow' }}
         onClick={decoratedOnClick}
       >
         {children}
@@ -104,18 +104,18 @@ function Skills() {
           <h1 className="text-6xl mb-3">Skills</h1>
           <Accordion className='flex flex-wrap flex-col'>
             {
-              Skills.map((skills)=>
-            <Card className='w-96'>
-              <Card.Header className='bg-slate-900'>
-                <CustomToggle eventKey={skills.ek} className='ease-in duration-300'><p>{skills.Skill}</p></CustomToggle>
-              </Card.Header>
-              <Accordion.Collapse eventKey={skills.ek} className='ease-in duration-300'>
-                <Card.Body>{skills.def}</Card.Body>
-              </Accordion.Collapse>
-            </Card>
+              Skills.map((skills) =>
+                <Card className='w-96'>
+                  <Card.Header className='bg-slate-900'>
+                    <CustomToggle eventKey={skills.ek} className='ease-in duration-300'><p>{skills.Skill}</p></CustomToggle>
+                  </Card.Header>
+                  <Accordion.Collapse eventKey={skills.ek} className='ease-in duration-300'>
+                    <Card.Body>{skills.def}</Card.Body>
+                  </Accordion.Collapse>
+                </Card>
               )
             }
-            
+
           </Accordion>
         </div>
       </div>

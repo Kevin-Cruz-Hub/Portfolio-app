@@ -1,52 +1,69 @@
-import {useState, useEffect} from 'react'
+import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Form';
+
 function Contact() {
-  const [word, setWord] = useState(null)
+  const [fact, setFact] = useState(null)
+  console.log(fact)
   const apiKey = process.env.REACT_APP_PORTFOLIO_API_KEY
-  const url = `https://random-words5.p.rapidapi.com/getRandom`
+  // const category = 'success'
 
-  const getWord = async ()=>{
-    try {
-      const resp = await fetch(url)
-      const data = await resp.json()
-      console.log(data)
-      setWord(data)
-    } catch (error) {
-      
-    }
-  }
-  console.log(word)
-  // const value = fact[0].quote
-  // console.log(fact)
   // Get Api data
-  // const getFact = async() =>{
-  //   try{
-  //     const resp = await fetch(url,{
-  //       headers:{
-  //         'X-Api-Key':apiKey
-  //       }
-  //     })
-  //     const data = await resp.json()
-  //     setFact(data)
-  //     // console.log(data)
-  //   }catch(e){
-  //     console.log('Error fetching data\n',e)
-  //   }
-  // }
+  const options = {
+    method: 'GET',
+    headers: { 'x-api-key': apiKey }
+  }
+  const mood=['happiness', 'success', 'learning']
+  let rand = Math.floor(Math.random() * mood.length)
+  console.log(rand)
+  const url = `https://api.api-ninjas.com/v1/quotes?category=${mood[rand]}`
 
-  // useEffect(()=>{
-  //   getFact()
-  // },[])
+
+  useEffect(() => {
+    const getFact = async () => {
+      fetch(url, options)
+        .then(res => res.json()) // parse response as JSON
+        .then(data => {
+          setFact(data)
+        })
+        .catch(err => {
+          console.log(`error ${err}`)
+        });
+    }
+    getFact()
+
+  }, [])
   return (
     <motion.div
-    initial={{width: 0}}
-    animate={{width: '100%'}}
-    exit={{x: window.innerWidth}}
+      initial={{ width: 0 }}
+      animate={{ width: '100%' }}
+      exit={{ x: window.innerWidth }}
     >
-      <div className="container-sm">
+      <div className="container-sm flex justify-center flex-col">
         <div>
-          <h1>This is the Contact Page</h1>
+          <h1 className='text-6xl m-8'>Contact Page</h1>
+        </div>
+        <div className='text-2xl'>
+          <Form>
+            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+              <Form.Label>Name:</Form.Label>
+              <Form.Control type="text" placeholder="Please enter name" />
+              <Form.Label>Phone Number:</Form.Label>
+              <Form.Control type="number" placeholder="Phone Number" />
+              <Form.Label>Email address</Form.Label>
+              <Form.Control type="email" placeholder="name@example.com" />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+              <Form.Label>What would you like to tell me?</Form.Label>
+              <Form.Control as="textarea" rows={3} />
+            </Form.Group>
+          </Form>
+        </div>
+        <div>
+          <p>Random Fact:</p>
           {
+            
           }
         </div>
       </div>

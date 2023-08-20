@@ -2,8 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
-    background-color: rgb(5, 3, 18);
-    color:rgb(242, 255, 142);
-    overflow: hidden;
+body {
+	/* background-image: url("https://cdn.mos.cms.futurecdn.net/HuGGeENt6kGyixe3hT9tnY.jpg") ; */
+    /* opacity: 0.6; */
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-color: rgb(5, 3, 18);
+	color: rgb(242, 255, 142);
+	overflow: hidden;
+}
+div{
+    opacity: 1;
+}
+.Project {
+	display: flex;
+	justify-content: space-between;
+	flex-direction: row;
 }
