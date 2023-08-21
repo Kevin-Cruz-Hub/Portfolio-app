@@ -10,14 +10,16 @@ Features:
 - Contact form
 - API quote data 
 - Links to professional information
-- Accordion
+- Accordion for known technologies
 
 Future Additions
-- smooth scroll instead of having to click the navbar to move around
+- smooth scroll instead of having to click the navbar to move around to different pages
 - text animations
 - content fade in
 - project image overlays to add a short description to the project
 - link the form to a database
+- submitable form
+- 
 
 Resources:
 - https://dmitripavlutin.com/react-useeffect-explanation/#:~:text=The%20dependencies%20argument%20of%20the,or%20state%20value%20has%20changed.
